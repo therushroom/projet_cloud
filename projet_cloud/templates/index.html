@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+
+
+{% block content %}
+
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <a href="{% url 'logout' %}" type="button" class="btn btn-primary" id="butt">Logout</a>
+  <a type="button" href="/app" class="btn btn-primary btn-lg">run app</a>
+{% else %}
+<a href="{% url 'login' %}" type="button" class="btn btn-primary" id="butt">Login</a>
+{% endif %}
+{% endblock %}
+
